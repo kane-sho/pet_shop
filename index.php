@@ -23,13 +23,12 @@ $animals = $stmt->fetchAll(PDO::FETCH_ASSOC);
 </head>
 <body>
     <h3>本日のご紹介ペット！</h3>
-    <ul>
     <?php foreach ($animals as $animal): ?>
-        <li><?= h($animal['type']) . 'の' . h($animal['classification']) . 'ちゃん' . 
+        <p><?= h($animal['type']) . 'の' . 
+        h($animal['classification']) . 'ちゃん' . 
         '<br>' . h($animal['description']) . 
         '<br>' . h($animal['birthday']) . ' 生まれ' . 
-        '<br>' . '出身地 ' . h($animal['birthplace']) . '<hr>' ?></li>
+        '<br>' . '出身地 ' . h($animal['birthplace']) ?></p><hr>
     <?php endforeach; ?>
-    </ul>
 </body>
 </html>
